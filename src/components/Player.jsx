@@ -58,12 +58,12 @@ const Player = () => {
           <Col xs={4}>
             <Row>
               <Col xs={8} className="text-white">
-                <h4>{songTitle}</h4>
+                <h4 fs-1>{songTitle}</h4>
                 <h6>{albumTitle}</h6>
               </Col>
               <Col xl={4} className="d-none d-xl-block">
-                <div className="me-5" style={{ overflow: "hidden" }}>
-                  <img src={albumCover} alt="albumCover" width="100%" />
+                <div style={{ overflow: "hidden" }}>
+                  <img src={albumCover} alt="albumCover" className="w-100 object-fit-cover" />
                 </div>
               </Col>
             </Row>

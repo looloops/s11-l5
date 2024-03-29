@@ -31,12 +31,6 @@ const AlbumDetails = ({ album }) => {
         {elem.title}
       </Link>
 
-      <small className="duration" style={{ color: "white" }}>
-        {`${Math.floor(parseInt(elem.duration) / 60)}:${parseInt(elem.duration) % 60 < 10 ? "0" : ""}${
-          parseInt(elem.duration) % 60
-        }`}
-      </small>
-
       <div className="ms-3">
         <div
           style={{ color: "white" }}

@@ -18,14 +18,18 @@ function App() {
             <Col xs={2}>
               <Sidebar />
             </Col>
-            <Col xs={12} md={9} className="offset-md-3 mainPage">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/artist_page.html" element={<ArtistPage />} />
-                <Route path="/album_page.html" element={<AlbumPage />} />
-                <Route path="/favourites.html" element={<Favourites />} />
-              </Routes>
-              <Player />
+            <Col xs={10} md={9}>
+              <Row>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/artist_page.html" element={<ArtistPage />} />
+                  <Route path="/album_page.html" element={<AlbumPage />} />
+                  <Route path="/favourites.html" element={<Favourites />} />
+                </Routes>
+              </Row>
+              <Row>
+                <Player />
+              </Row>
             </Col>
           </Row>
         </Container>

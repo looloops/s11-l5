@@ -6,11 +6,11 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const [artists, setArtists] = useState({
-    rock: ["queen", "u2", "pinkfloyd", "eagles", "thedoors", "oasis", "thewho", "bonjovi"],
+    rock: ["queen", "u2", "pinkfloyd", "ledzeppelin", "oasis", "thewho"],
     pop: ["883", "coldplay", "jovanotti", "jamesblunt", "katyperry", "arianagrande"],
-    hipHop: ["eminem", "snoopdogg", "caparezza", "j-ax", "rancore"],
+    alternative: ["radiohead", "muse", "thekillers", "moby", "redhotchilipeppers", "jamesblake"],
   });
-  const [homeArtists, setHomeArtists] = useState({ rock: [], pop: [], hipHop: [] });
+  const [homeArtists, setHomeArtists] = useState({ rock: [], pop: [], alternative: [] });
 
   const searchResults = useSelector((state) => state.GeneralReducers.searchResults);
   const activeSearch = useSelector((state) => state.GeneralReducers.activeSearch);
@@ -59,7 +59,7 @@ const Home = () => {
     <Row key={category}>
       <Col xs={10}>
         <div id={category}>
-          <h2>{category === "rock" ? "Rock Classics" : category === "pop" ? "Pop Culture" : "HipHop"}</h2>
+          <h2>{category === "rock" ? "Rock Classics" : category === "pop" ? "Pop Culture" : "alternative"}</h2>
           <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3">
             {homeArtists[category].map((elem, i) => (
               <AlbumCard key={`${category}${i}`} elem={elem} />

@@ -39,8 +39,7 @@ export const removeFav = (songId) => ({
   type: REMOVE_FAV,
   payload: songId,
 });
-
-const searchInt = async (dispatch, searchQuery) => {
+export const search = async (dispatch, searchQuery) => {
   if (searchQuery.length > 2) {
     dispatch(setSearch([]));
     try {
@@ -61,8 +60,4 @@ const searchInt = async (dispatch, searchQuery) => {
   } else {
     document.querySelector("#searchResults").style.display = "none";
   }
-};
-
-export const search = (dispatch, searchQuery) => {
-  return searchInt(dispatch, searchQuery);
 };

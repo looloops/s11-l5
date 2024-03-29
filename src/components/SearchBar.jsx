@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import { setSearch } from "../redux/actions";
 
 const SearchBar = ({ onSearch }) => {
   const [input, setInput] = useState("");

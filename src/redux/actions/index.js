@@ -6,6 +6,7 @@ export const REMOVE_LIKE = "REMOVE_LIKE";
 export const ALBUM_DETAILS = "ALBUM_DETAILS";
 export const ADD_FAV = "ADD_FAV";
 export const REMOVE_FAV = "REMOVE_FAV";
+export const GET_SONGS = "GET_SONGS";
 
 export const setQueryParam = (param) => ({
   type: QUERY_PARAM,
@@ -39,27 +40,29 @@ export const removeFav = (songId) => ({
   payload: songId,
 });
 
-export const search = (searchQuery) => {
-  return async (dispatch) => {
-    console.log("here");
-    if (searchQuery.length > 2) {
-      try {
-        let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + searchQuery, {
-          method: "GET",
-        }); // gets the information
+const searchInt = async (dispatch, searchQuery) => {
+  if (searchQuery.length > 2) {
+    dispatch(setSearch([]));
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + searchQuery, {
+        method: "GET",
+      });
 
-        if (response.ok) {
-          let result = await response.json();
-          let songs = result.data;
-          dispatch(setSearch(songs));
-        } else {
-          console.log("error");
-        }
-      } catch (err) {
-        console.log(err);
+      if (response.ok) {
+        let result = await response.json();
+        let songs = result.data;
+        dispatch(setSearch(songs));
+      } else {
+        console.log("error");
       }
-    } else {
-      document.querySelector("#searchResults").style.display = "none";
+    } catch (err) {
+      console.log(err);
     }
-  };
+  } else {
+    document.querySelector("#searchResults").style.display = "none";
+  }
+};
+
+export const search = (dispatch, searchQuery) => {
+  return searchInt(dispatch, searchQuery);
 };

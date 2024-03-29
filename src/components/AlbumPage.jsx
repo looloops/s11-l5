@@ -2,7 +2,7 @@ import { Col, Row } from "react-bootstrap";
 import TopBar from "./TopBar";
 import { useEffect, useState } from "react";
 import AlbumDetails from "./AlbumDetails";
-import AlbumArtist from "./AlbumArt";
+import AlbumArtist from "./AlbumArtist";
 import { useDispatch, useSelector } from "react-redux";
 
 const AlbumSinglePage = () => {

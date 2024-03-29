@@ -20,7 +20,7 @@ const Home = () => {
       const response = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`, {
         method: "GET",
         headers: {
-          "X-RapidAPI-Key": "be9aa8f80cmshcb87ef0073d5d4ep15813fjsn4ee3c6fb8586",
+          "X-RapidAPI-Key": "9d408f0366mshab3b0fd8e5ecdf7p1b09f2jsne682a1797fa0",
           "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
         },
       });

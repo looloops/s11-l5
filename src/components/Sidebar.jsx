@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   const callsearch = (inputValue) => {
     dispatch(setQueryParam(inputValue));
-    dispatch(search(inputValue));
+    search(dispatch, inputValue);
   };
 
   return (
